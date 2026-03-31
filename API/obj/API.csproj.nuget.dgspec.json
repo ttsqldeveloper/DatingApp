@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TEBOHO\\DatingApp\\api\\API.csproj": {}
+    "C:\\Users\\TEBOHO\\datingapp\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TEBOHO\\DatingApp\\api\\API.csproj": {
+    "C:\\Users\\TEBOHO\\datingapp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TEBOHO\\DatingApp\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\TEBOHO\\datingapp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\TEBOHO\\DatingApp\\api\\API.csproj",
+        "projectPath": "C:\\Users\\TEBOHO\\datingapp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\TEBOHO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TEBOHO\\DatingApp\\api\\obj\\",
+        "outputPath": "C:\\Users\\TEBOHO\\datingapp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

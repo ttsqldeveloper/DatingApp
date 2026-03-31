@@ -1,27 +1,34 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using API.Data;
 using API.Entities;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+
 namespace API.Controllers
 {
-    [Route("api/[controller]")] // localhost:5001/api/members
+    [Route("api/[controller]")]
     [ApiController]
-    public class MembersController(DataContext context) : ControllerBase
+    public class MembersController : ControllerBase
     {
-        [HttpGet]
-        public async Task< ActionResult<IReadOnlyList<AppUser>>> GetMembers()
+        private readonly DataContext _context;
+
+        public MembersController(DataContext context)
         {
-            var members = await context.Users.ToListAsync();
-            return Ok(members); // Wrap in Ok() for proper ActionResult
+            _context = context;
         }
 
-        [HttpGet("{id}")] // localhost:5001/api/members/bob-id
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetMembers()
+        {
+            var members = await _context.Users.ToListAsync();
+            return Ok(members);
+        }
+
+        [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetMember(string id)
         {
-            var user = context.Users.FirstOrDefault(x => x.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
 
             if (user == null)
             {
